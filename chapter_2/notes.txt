@@ -1,0 +1,122 @@
+This chapter is on arrays, linked lists and selection sort.
+
+                        Arrays                  Linked Lists
+
+Reading:                  O(1)                       O(n)
+
+Insertion:                O(n)                       O(1)
+
+Deletion:                 O(n)                       O(1)
+
+O(n) = Linear Time
+O(1) = Constant Time
+
+Computer memory can be thought of as, a cabinet full of drawers.
+Each drawer(memory cell) has it's own address through which it can be accessed.
+
+Example:
+  If you want to store some item in the computer memory, you ask the computer
+  for some space, it will give you the address of a memory cell where you can
+  store the item.
+
+They are two basic ways to store multiple items:
+                  - arrays
+                  - linked lists
+
+An array is a data structure in which all it's item (or data,elements) are
+stored contiguously(right next to each other) in the computer's memory.
+
+The computer assigns memory to arrays in a block the size of the array.
+
+Inserting items at the end of an array causes the computer to look for a new
+memory location of size array + 1, to accommodate the new item.
+
+As can be seen above, insertion at the end of an array are inefficient.
+
+Another downside of an array is that in case the computer has to move the
+entire array due to insertion, then it must look for a contiguously free memory
+location of the size array + 1, This may not always be possible as the computers
+resources of this size may not be free as a continuous block of memory.
+
+The above problems of inefficient insertions are solved by using a linked list
+data structure.
+
+In a linked list each item stores it's value along with the address of the
+next location and the location of the previous location.
+
+A bunch of random addresses are linked together in this fashion.
+
+With linked list you never have to move the entire structure to accommodate an
+item, you also do not have to worry about find large chunks of memory to be
+free. Each linked list cell only has to have enough space for it's value,
+addresses of the previous and the next location, this is comparatively smaller
+than finding memory for an entire array of values.
+
+To note that the overhead of a linked list is larger than that of an array.
+
+What i mean by this is that if i want to store x values, it will take overall
+less space as an array then as an linked list(since linked lists need to keep
+track of previous and next addresses) .
+
+The problem with linked list is you do not have random access to each of it's
+memory location.
+If you want to read the last item(element) in the linked list you have to walk
+through the entire list to get to it.(since all the cells are in random
+locations)
+
+In case of arrays we know the location of all it's element(since each element
+is stored in continuous memory locations).
+Above property of arrays allows us to have random access to any of it's elements
+all we need to know is the address of the first(zeroth) element and the position
+of the element from the first element(index), this will allow us to calculate
+the memory location of the required element.
+
+Above also gives another downside to array data structure, each of its element
+must be of the same size so that we may get random access to any of its
+elements.
+
+Inserting into the middle of a list:
+  In case of a list if you want to insert in the middle, all you need to do is
+  modify the pointer of appropriate two list cell to accommodate the new item
+  in the required position.
+
+  In the case of array if you want to insert in the middle, you need to shift
+  all the elements down. Also the problem with there not being enough space for
+  the new element, causes a migration of the entire array to a new memory
+  location if there is no free space at the end of the array.
+
+  The worst case for the array is inserting at the beginning, this will cause
+  all the elements in to be shifted down, that is a lot of operations.
+  This has a running time of O(n).
+
+Deletions:
+  In this case to list are better.
+
+    In case of list all you need to do is modify where the previous element
+    points to.
+
+    In case of list we need to move up everything below the deleted element.
+
+    The worst case in the array is the deletion of the first element, it causes
+    all the elements below it to me moved up. Has a runtime of O(n).
+
+  Deletions will always work.
+
+  Insertions may fail some times when there is no memory left.
+
+There are two different types of access to elements:
+
+                - sequential access
+                - Random access
+
+Sequential access means reading the elements one by one, starting with the
+first element.
+Example is linked lists.
+
+Random access means you can jump directly to any element in the data structure
+directly. Another way of saying that lookup is constant time(O(1)).
+Example is arrays.
+
+================================================================================
+
+Selection sort
