@@ -1,0 +1,22 @@
+(My answers)
+
+2.1)  Linked list.
+
+2.2) Linked lists, since they have constant time with respect to insertions
+     and deletion of elements.
+
+2.3) Array, since an array support random access, this means that lookup is
+     constant time.
+
+2.4) The downside of array insertions are:
+        - They have a runtime of O(n) for insertions.
+        - The space required for the insertion may not be sufficient, causing
+          the entire array to be moved to a new location(expensive operations)
+
+     In case of binary search the array must be sorted, so any new additions
+     must be inserted in the right position. This has a runtime of O(n) for
+     arrays.
+
+2.5) This hybrid data structure is slower than a array but faster than a list
+     in the case of a searching.
+     In case of insertion this hybrid data structure has same runtime as list.
