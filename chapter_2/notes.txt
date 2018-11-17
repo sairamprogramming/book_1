@@ -95,7 +95,7 @@ Deletions:
     In case of list all you need to do is modify where the previous element
     points to.
 
-    In case of list we need to move up everything below the deleted element.
+    In case of arrays we need to move up everything below the deleted element.
 
     The worst case in the array is the deletion of the first element, it causes
     all the elements below it to me moved up. Has a runtime of O(n).
@@ -119,4 +119,52 @@ Example is arrays.
 
 ================================================================================
 
-Selection sort
+Selection sort(Assume we are sorting for smallest to largest):
+
+  In selection sort we first define a empty list of the same size as the list
+  that needs to be sorted.
+
+  We then traverse the original list and find the smallest element in that list.
+
+  We add that element to the first index of the empty list.
+
+  We remove the smallest element from the original list.
+
+  Now the second smallest will become the smallest in the original list.
+
+  We do another iteration of above and add the second smallest element to the
+  second index of the new list we created.
+
+  We do this until the original list is empty, the list we created will contain
+  all the elements of the original list which is now sorted smallest to largest.
+
+Since we need to traverse the list to find the smallest element this is a O(n)
+operation and we need to do this n times, therefore the runtime of selection
+sort is O(n^2).
+
+Although we are reducing the size of the original list the runtime will still be
+of the order of O(n^2).
+
+  The number of elements to traverse after each iteration reduce by 1. If they
+  are n elements.
+    (n, n-1, n-2, n-3, ... , 2, 1)
+
+  Above is the number of operations( in the worst case) to find the smallest
+  element in the list in each iteration.
+
+  Now if sum we know that summation of integers 1 to n is total = (n*(n+1))/2.
+
+  Now we take the average of total, which is total/n -> (n + 1)/2
+
+  Therefore we can say on average that the total number of operations to find
+  the smallest element in the original list is (n + 1)/2 in total.
+
+  Now since we need to do this n times we multiply n with the average, therefore
+  the total number of operations to do selection sort is (n*(n + 1))/2
+
+  (n*(n + 1)/2) -> (n^2)/2 + n/2
+
+  As n increases we see that the n^2 term dominates and becomes the main factor
+  in determining the runtime.
+
+  Therefore we say that the time complexity of selection sort is O(n^2).
