@@ -1,0 +1,58 @@
+This chapter is on Recursion.
+
+Recursion is where a function calls itself.
+
+Although a recursive algorithm can be implemented using a loop construct, it may
+not be clear on how it is being implemented.
+
+Recursion is used when it makes the solution clearer.
+
+Usually there is no performance benefit in using a recursive solution to some
+problem, in fact loop constructs are sometimes better for performance.
+
+Note: Many important algorithms use recursion.
+
+
+Base Case and Recursive case
+
+  Every recursive function has two parts:
+
+            - the base case
+            - the recursive case
+
+  The recursive case is when the function calls itself.
+
+  The base case is when the function doesn't call itself.
+  (terminating condition)
+
+  The base case is to terminate the recursive call, there by not allowing an
+  infinite amount of recursive calls.
+
+  Example:
+
+          def countdown(i):
+            print(i)
+            if i <= 0:                        <--- This is the base case.
+              return
+            else:                             <--- This is the recursive case.
+              countdown(i - 1)
+
+The Stack Data Structure
+
+  Stack is a simple data structure of the which has a FIFO (First in First
+  out) structure.
+
+  In the stack data structure, when you insert an item it gets added to the top
+  of the list.
+
+  When you read an item, you only read the topmost item, and it's taken of the
+  list.
+
+  Stack two main actions:
+
+      - push (insert the item on the top of the stack data structure.)
+      - pop  (remove and read the first item on the stack data structure.)
+
+The Call Stack
+
+  Python uses a stack internally called the call stack.
